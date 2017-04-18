@@ -3,7 +3,7 @@ sys.path.append('../..')
 
 import numpy as np
 import matplotlib.pyplot as plt
-from Nezha.Bandstructure import Bandstructure
+from PlaneMeta.Bandstructure import Bandstructure
 
 a = 1.0
 r = 0.2*a
