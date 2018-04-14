@@ -10,6 +10,9 @@
 + Huang X, Lai Y, Hang Z H, et al. Dirac cones induced by accidental degeneracy in photonic crystals and zero-refractive-index materials[J]. Nature materials, 2011, 10(8): 582-586.
 ![nmat3030](./examples/nmat3030/nmat3030.jpeg)
 
++ Tight-binding Hamiltonian
+![Lieb Boson](./examples/Lieblattice/Lieboson.png)
+
 ## Status
 Working on it...
 

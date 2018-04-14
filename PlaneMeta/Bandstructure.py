@@ -1,5 +1,7 @@
+from __future__ import absolute_import
+
 import numpy as np
-import Unitcell
+from . import Unitcell
 import scipy.sparse.linalg as linalg
 
 class Bandstructure:

@@ -23,8 +23,8 @@ class Unitcell:
         invEPS = sparse.spdiags(c**2/np.reshape(epsilon,M),0,M,M,format='lil')
 
         DEX = sparse.lil_matrix((M, M), dtype=complex)
-        DEX = DEX + sparse.diags(-1,0,shape=(M,M),format='lil',dtype=complex)
-        DEX = DEX + sparse.diags(1,1,shape=(M,M),format='lil',dtype=complex)
+        DEX = DEX + sparse.diags([-1],[0],shape=(M,M),format='lil',dtype=complex)
+        DEX = DEX + sparse.diags([1],[1],shape=(M,M),format='lil',dtype=complex)
 
         for ny in range(Ny-1):
             neq = Nx*ny + Nx - 1
@@ -38,8 +38,8 @@ class Unitcell:
         DEX = DEX/dx
 
         DEY = sparse.lil_matrix((M, M), dtype=complex)
-        DEY = DEY + sparse.diags(-1,0,shape=(M,M),format='lil',dtype=complex)
-        DEY = DEY + sparse.diags(1,Nx,shape=(M,M),format='lil',dtype=complex)
+        DEY = DEY + sparse.diags([-1],[0],shape=(M,M),format='lil',dtype=complex)
+        DEY = DEY + sparse.diags([1],[Nx],shape=(M,M),format='lil',dtype=complex)
         dpy = np.exp(-1j*ky)
         for nx in range(Nx):
             neq = Nx*(Ny-1) + nx
@@ -48,8 +48,8 @@ class Unitcell:
         DEY = DEY/dy
 
         DHX = sparse.lil_matrix((M, M), dtype=complex)
-        DHX = DHX + sparse.diags(1,0,shape=(M,M),format='lil',dtype=complex)
-        DHX = DHX + sparse.diags(-1,-1,shape=(M,M),format='lil',dtype=complex)
+        DHX = DHX + sparse.diags([1],[0],shape=(M,M),format='lil',dtype=complex)
+        DHX = DHX + sparse.diags([-1],[-1],shape=(M,M),format='lil',dtype=complex)
 
         for ny in range(1,Ny):
             neq = Nx*ny
@@ -63,8 +63,8 @@ class Unitcell:
         DHX = DHX/dx
 
         DHY = sparse.lil_matrix((M, M), dtype=complex)
-        DHY = DHY + sparse.diags(1,0,shape=(M,M),format='lil',dtype=complex)
-        DHY = DHY + sparse.diags(-1,-Nx,shape=(M,M),format='lil',dtype=complex)
+        DHY = DHY + sparse.diags([1],[0],shape=(M,M),format='lil',dtype=complex)
+        DHY = DHY + sparse.diags([-1],[-Nx],shape=(M,M),format='lil',dtype=complex)
         dpy = np.exp(1j*ky)
         for nx in range(Nx):
             neq = nx
